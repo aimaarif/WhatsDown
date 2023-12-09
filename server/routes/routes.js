@@ -11,7 +11,7 @@ import { addUser, getUser } from '../controller/user-controller.js';
 const route = express.Router();
 
 route.post('/add', addUser);
-// route.get('/users', getUser);
+route.get('/users', getUser);
 
 // route.post('/conversation/add', newConversation);
 // route.post('/conversation/get', getConversation);

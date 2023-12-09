@@ -2,12 +2,12 @@ import { useContext, useEffect, useState } from 'react';
 
 import { styled, Box, Typography } from "@mui/material";
 
-import { UserContext } from '../../../context/UserProvider';
+// import { UserContext } from '../../../context/UserProvider';
 import { AccountContext } from '../../../context/AccountProvider';
 
 import { setConversation, getConversation } from '../../../service/api';
 import { emptyProfilePicture } from '../../../constants/data';
-import { formatDate } from '../../../utils/common-utils';
+// import { formatDate } from '../../../utils/common-utils';
 
 const Component = styled(Box)`
     height: 45px;

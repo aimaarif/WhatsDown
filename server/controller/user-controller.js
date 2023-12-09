@@ -24,6 +24,6 @@ export const getUser = async (request, response) => {
         const user = await User.find({});
         response.status(200).json(user);
     } catch (error) {
-        response.status(500).json(error);
+        response.status(500).json("Error while fetching user's data: ", error);
     }
 }
