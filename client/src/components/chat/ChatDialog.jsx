@@ -1,13 +1,12 @@
 import { useContext } from 'react';
 import { Dialog, styled, Box, Toolbar } from '@mui/material';
 
-// import { UserContext } from '../../context/UserProvider';
+import { UserContext } from '../../context/UserProvider';
 
 // //components
 import Menu from './menu/Menu';
 import EmptyChat from './chat/EmptyChat';
-// import ChatBox from './chat/ChatBox';
-// import EmptyChat from './chat/EmptyChat';
+import ChatBox from './chat/ChatBox';
 
 const Component = styled(Box)`
     display: flex;
@@ -37,7 +36,7 @@ const dialogStyle = {
 
 const ChatDialog = () => {
 
-    // const { person } = useContext(UserContext);
+    const { person } = useContext(UserContext);
     
     return (
         <Dialog 
@@ -52,10 +51,10 @@ const ChatDialog = () => {
                     <Menu/>
                 </LeftComponent>
                 <RightComponent>
-                    {/* {
+                    {
                         Object.keys(person).length  ? <ChatBox/> : <EmptyChat />
-                    } */}
-                    <EmptyChat/>
+                    }
+                    {/* <EmptyChat/> */}
                 </RightComponent>
             </Component>
         </Dialog>

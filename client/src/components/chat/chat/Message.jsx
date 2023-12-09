@@ -5,7 +5,7 @@ import { GetApp as GetAppIcon } from '@mui/icons-material';
 
 import { AccountContext } from '../../../context/AccountProvider';
 
-import { downloadMedia, formatDate } from '../../../utils/common-utils';
+// import { downloadMedia, formatDate } from '../../../utils/common-utils';
 import { iconPDF } from '../../../constants/data';
 
 const Wrapper = styled(Box)`
@@ -71,7 +71,7 @@ const TextMessage = ({ message }) => {
     return (
         <>
             <Text>{message.text}</Text>
-            <Time>{formatDate(message.createdAt)}</Time>
+            {/* <Time>{formatDate(message.createdAt)}</Time> */}
         </>
     )
 }
@@ -91,11 +91,11 @@ const ImageMessage = ({ message }) => {
             }
             <Time style={{ position: 'absolute', bottom: 0, right: 0 }}>
                 <GetAppIcon 
-                    onClick={(e) => downloadMedia(e, message.text)} 
+                    // onClick={(e) => downloadMedia(e, message.text)} 
                     fontSize='small' 
                     style={{ marginRight: 10, border: '1px solid grey', borderRadius: '50%' }} 
                 />
-                {formatDate(message.createdAt)}
+                {/* {formatDate(message.createdAt)} */}
             </Time>
         </div>
     )

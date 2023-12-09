@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 
 import { styled, Box, Typography } from "@mui/material";
 
-// import { UserContext } from '../../../context/UserProvider';
+import { UserContext } from '../../../context/UserProvider';
 import { AccountContext } from '../../../context/AccountProvider';
 
 import { setConversation, getConversation } from '../../../service/api';
@@ -69,11 +69,11 @@ const Conversation = ({ user }) => {
             </Box>
             <Box style={{width: '100%'}}>
                 <Container>
-                    <Typography>{user.name}</Typography>
+                    {/* <Typography>{user.name}</Typography>
                     { 
                         message?.text && 
                         <Timestamp>{formatDate(message?.timestamp)}</Timestamp>        
-                    }
+                    } */}
                 </Container>
                 <Box>
                     <Text>{message?.text?.includes('localhost') ? 'media' : message.text}</Text>
