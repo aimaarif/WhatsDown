@@ -3,6 +3,7 @@ import User from "../models/User.js";
 
 export const addUser = async (request, response) => {
     try {
+        //  already  exists
         let exist = await User.findOne({ sub: request.body.sub });
 
         if(exist) {
@@ -10,6 +11,7 @@ export const addUser = async (request, response) => {
             return;
         }
 
+        // First time user
         const newUser = new User(request.body);
         await newUser.save();
         response.status(200).json(newUser);
