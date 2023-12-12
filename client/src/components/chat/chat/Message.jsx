@@ -44,7 +44,7 @@ const Time = styled(Typography)`
 
 const Message = ({ message }) => {
     const { account } = useContext(AccountContext);
-
+    
     return (
         <>
         {
@@ -71,7 +71,7 @@ const TextMessage = ({ message }) => {
     return (
         <>
             <Text>{message.text}</Text>
-            {/* <Time>{formatDate(message.createdAt)}</Time> */}
+            <Time>{formatDate(message.createdAt)}</Time>
         </>
     )
 }
