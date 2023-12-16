@@ -7,7 +7,7 @@ import { AccountContext } from '../../../context/AccountProvider';
 
 import { setConversation, getConversation } from '../../../service/api';
 import { emptyProfilePicture } from '../../../constants/data';
-// import { formatDate } from '../../../utils/common-utils';
+ import { formatDate } from '../../../utils/common-utils';
 
 const Component = styled(Box)`
     height: 45px;
@@ -69,14 +69,14 @@ const Conversation = ({ user }) => {
             </Box>
             <Box style={{width: '100%'}}>
                 <Container>
-                    {/* <Typography>{user.name}</Typography>
+                     <Typography>{user.name}</Typography>
                     { 
                         message?.text && 
                         <Timestamp>{formatDate(message?.timestamp)}</Timestamp>        
-                    } */}
+                    } 
                 </Container>
                 <Box>
-                    <Text>{message?.text?.includes('localhost') ? 'media' : message.text}</Text>
+                    <text>{message?.text?.includes('localhost') ? 'media' : message.text}</text>
                 </Box>
             </Box>
         </Component>

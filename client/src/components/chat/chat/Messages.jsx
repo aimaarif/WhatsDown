@@ -41,7 +41,7 @@ const Messages = ({ person, conversation }) => {
     const [value, setValue] = useState();
     const [file, setFile] = useState();
     const [image, setImage] = useState();
-
+    
     const scrollRef = useRef();
 
     const { account, socket, newMessageFlag, setNewMessageFlag } = useContext(AccountContext);
