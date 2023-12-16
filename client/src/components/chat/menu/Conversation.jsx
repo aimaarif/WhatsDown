@@ -76,7 +76,7 @@ const Conversation = ({ user }) => {
                     } 
                 </Container>
                 <Box>
-                    <text>{message?.text?.includes('localhost') ? 'media' : message.text}</text>
+                    <Text>{message?.text?.includes('localhost') ? 'media' : message.text}</Text>
                 </Box>
             </Box>
         </Component>

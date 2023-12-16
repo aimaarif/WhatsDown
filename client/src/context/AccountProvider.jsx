@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
+// const { io } = require("socket.io-client");
 
 export const AccountContext = createContext(null);
 
@@ -7,8 +8,8 @@ const AccountProvider = ({children}) => {
 
     const [ account, setAccount ] = useState();
     const [person, setPerson] = useState({});
-    // const [showloginButton, setShowloginButton] = useState(true);
-    // const [showlogoutButton, setShowlogoutButton] = useState(false);
+    const [showloginButton, setShowloginButton] = useState(true);
+    const [showlogoutButton, setShowlogoutButton] = useState(false);
 
     const [activeUsers, setActiveUsers] = useState([]);
     
@@ -26,10 +27,10 @@ const AccountProvider = ({children}) => {
             setAccount, 
             person,
             setPerson,
-            // showloginButton,
-            // setShowloginButton,
-            // showlogoutButton,
-            // setShowlogoutButton,
+            showloginButton,
+            setShowloginButton,
+            showlogoutButton,
+            setShowlogoutButton,
              socket,
              activeUsers,
              setActiveUsers,
