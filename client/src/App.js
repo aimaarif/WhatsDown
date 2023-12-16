@@ -6,11 +6,11 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import UserProvider from './context/UserProvider';
 import AccountProvider from './context/AccountProvider';
 
-// import Loader from './components/loader/Loader';
+import Loader from './components/loader/Loader';
 
-// const Messenger = lazy(() => import('./components/Messenger'));
+const Messenger = lazy(() => import('./components/Messenger'));
 
-import Messenger from './components/Messenger';
+// import Messenger from './components/Messenger';
 
 function App() {
 
@@ -18,16 +18,13 @@ function App() {
 
   return (
     <GoogleOAuthProvider clientId={clientId}>
-      {/* <UserProvider> */}
-        {/* <AccountProvider> */}
-          {/* <Suspense fallback={<Loader />}> */}
-            {/* <Messenger/> */}
-          {/* </Suspense> */}
-        {/* </AccountProvider> */}
-      {/* </UserProvider> */}
-      <AccountProvider>
-        <Messenger/>
-      </AccountProvider>
+      <UserProvider> 
+        <AccountProvider>
+          <Suspense fallback={<Loader />}>
+            <Messenger/>
+          </Suspense>
+        </AccountProvider>
+      </UserProvider>
     </GoogleOAuthProvider>
   );
 }

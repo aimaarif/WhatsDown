@@ -1,13 +1,13 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 
 import { MoreVert } from '@mui/icons-material';
 import { Menu, MenuItem, styled } from '@mui/material';
 
-import { googleLogout } from '@react-oauth/google';
-import { AccountContext } from '../../../context/AccountProvider';
+// import { googleLogout } from '@react-oauth/google';
+// import { AccountContext } from '../../../context/AccountProvider';
 // import { UserContext } from '../../../context/UserProvider';
 
-import { clientId } from '../../../constants/data';
+// import { clientId } from '../../../constants/data';
 
 //components
 import InfoDrawer from '../../drawer/Drawer';
@@ -18,10 +18,10 @@ const MenuOption = styled(MenuItem)`
     color: #4A4A4A;
 `;
 
-const Logout = styled(googleLogout)`
-    border: none;
-    box-shadow: none;
-`;
+// const Logout = styled(googleLogout)`
+//     border: none;
+//     box-shadow: none;
+// `;
 
 const HeaderMenu = () => {
     
@@ -40,14 +40,14 @@ const HeaderMenu = () => {
         setOpen(null);
     };
 
-    const onSignoutSuccess = () => {
-        // alert("You have been logged out successfully");
-        // console.clear();
-        // setShowlogoutButton(false);
-        // setShowloginButton(true);
-        // setAccount('');
-        // setPerson({});
-    };
+    // const onSignoutSuccess = () => {
+    //     alert("You have been logged out successfully");
+    //     console.clear();
+    //     setShowlogoutButton(false);
+    //     setShowloginButton(true);
+    //     setAccount('');
+    //     setPerson({});
+    // };
 
     const toggleDrawer = () => {
         setOpenDrawer(true);

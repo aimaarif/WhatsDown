@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Dialog, styled, Box, Toolbar } from '@mui/material';
+import { Dialog, styled, Box } from '@mui/material';
 
 import { UserContext } from '../../context/UserProvider';
 
@@ -53,9 +53,7 @@ const ChatDialog = () => {
                 <RightComponent>
                     {
                         Object.keys(person).length  ? <ChatBox/> : <EmptyChat />
-                    }
-                    {/* <EmptyChat/> */}
-                    
+                    }                    
                 </RightComponent>
             </Component>
         </Dialog>

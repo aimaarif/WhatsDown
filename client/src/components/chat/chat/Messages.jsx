@@ -15,13 +15,13 @@ const Wrapper = styled(Box)`
     background-size: 50%;
 `;
 
-const StyledFooter = styled(Box)`
-    height: 55px;
-    background: #ededed;
-    // position: absolute;
-    width: 100%;
-    // bottom: 0
-`;
+// const StyledFooter = styled(Box)`
+//     height: 55px;
+//     background: #ededed;
+//     // position: absolute;
+//     width: 100%;
+//     // bottom: 0
+// `;
     
 const Component = styled(Box)`
     height: 80vh;
@@ -41,7 +41,7 @@ const Messages = ({ person, conversation }) => {
     const [value, setValue] = useState();
     const [file, setFile] = useState();
     const [image, setImage] = useState();
-
+    
     const scrollRef = useRef();
 
     const { account, socket, newMessageFlag, setNewMessageFlag } = useContext(AccountContext);

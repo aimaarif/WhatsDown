@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { Dialog, Typography, List, ListItem, Box, styled, Backdrop } from '@mui/material';
+import { Dialog, Typography, List, ListItem, Box, styled } from '@mui/material';
 
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
@@ -54,15 +54,13 @@ const dialogStyle = {
 
 const LoginDialog = () => {
 
-    // const { setAccount,showloginButton, setShowloginButton, setShowlogoutButton } = useContext(AccountContext);
+    const { setAccount, showloginButton, setShowloginButton, setShowlogoutButton } = useContext(AccountContext);
 
-    const { setAccount } = useContext(AccountContext);
-    
     const onLoginSuccess = async (res) => {
         let decoded = jwtDecode(res.credential);
         setAccount(decoded);
-        // setShowloginButton(false);
-        // setShowlogoutButton(true);
+        setShowloginButton(false);
+        setShowlogoutButton(true);
         await addUser(decoded);
         console.log(decoded);
     };
@@ -71,12 +69,12 @@ const LoginDialog = () => {
         console.log('Login Failed:', res);
     };
 
-    // const onSignoutSuccess = () => {
-    //     alert("You have been logged out successfully");
-    //     console.clear();
-    //     setShowloginButton(true);
-    //     setShowlogoutButton(false);
-    // };
+    const onSignoutSuccess = () => {
+        alert("You have been logged out successfully");
+        console.clear();
+        setShowloginButton(true);
+        setShowlogoutButton(false);
+    };
 
     return (
         <Dialog
@@ -98,13 +96,20 @@ const LoginDialog = () => {
                 <Box style={{position:'relative'}}>
                     <QRCOde src={qrCodeImage} alt="QR Code" />
                     <Box style={{position: 'absolute', top: '50%', transform: 'translateX(25%) translateY(-25%)'}}>
-                        {/* { showloginButton ?
-                             : null} */}
-                             <GoogleLogin
+                        { showloginButton ?
+                            <GoogleLogin
                                 buttonText=""
                                 onSuccess={onLoginSuccess}
                                 onError={onLoginFailure}
-                            />
+                            /> 
+                            : null
+                        }
+                        {/* <GoogleLogin
+                                buttonText=""
+                                onSuccess={onLoginSuccess}
+                                onError={onLoginFailure}
+                            />  */}
+                             
                     </Box>
                 </Box>
             </Component>

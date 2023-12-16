@@ -1,4 +1,4 @@
-import { styled, Drawer, Box, Typography, Toolbar } from '@mui/material';
+import { styled, Drawer, Box, Typography } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
 
 //components

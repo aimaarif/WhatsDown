@@ -4,11 +4,10 @@ import express from 'express';
 import { newConversation, getConversation } from '../controller/conversation-controller.js';
 import { addUser, getUser } from '../controller/user-controller.js';
 import { newMessage, getMessage }from '../controller/message-controller.js';
-import { uploadFile, getImage } from '../../client/src/service/api.js';
+import { uploadImage, getImage } from '../controller/image-controller.js';
 
-//import message from '../models/Message.js';
-//import { uploadImage, getImage } from '../controller/image-controller.js';
 
+// import message from '../models/Message.js';
 import upload from '../utils/upload.js';
 
 const route = express.Router();
